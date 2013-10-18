@@ -3,6 +3,12 @@ function escapeSearchPattern
     echo "$(echo "${1}" | sed "s@\[@\\\\[@g")"
 }
 
+function installDependencies
+{
+    apt-get update
+    apt-get -y install make
+}
+
 function installNode
 {
     mkdir -p '/opt/node'
@@ -12,7 +18,7 @@ function installNode
     source '/etc/profile.d/node.sh'
 }
 
-function installApps
+function installNodeApps
 {
     /opt/node/bin/npm install -g forever
 }
@@ -39,8 +45,9 @@ function startServers
 
 function main
 {
+    installDependencies
     installNode
-    installApps
+    installNodeApps
     installStatSD
 
     startServers
