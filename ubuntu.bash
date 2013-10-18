@@ -6,7 +6,7 @@ function escapeSearchPattern
 function updateTimeZone
 {
     cp '/usr/share/zoneinfo/America/Los_Angeles' '/etc/localtime'
-    echo 'America/Los_Angeles' > /etc/timezone
+    echo 'America/Los_Angeles' > '/etc/timezone'
 }
 
 function installDependencies
@@ -51,12 +51,13 @@ function startServers
 
 function main
 {
+    updateTimeZone
+
     installDependencies
     installNode
     installNodeApps
     installStatSD
 
-    updateTimeZone
     startServers
 }
 
