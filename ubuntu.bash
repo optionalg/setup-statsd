@@ -32,7 +32,7 @@ function installStatSD
     cd '/opt'
     git clone 'https://github.com/etsy/statsd.git'
 
-    cp "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/config/config.js" '/opt/statsd/config.js'
+    cp "${appPath}/config/config.js" '/opt/statsd/config.js'
 
     cd '/opt/statsd'
     /opt/node/bin/npm install
@@ -41,11 +41,13 @@ function installStatSD
 function startServers
 {
     mkdir -p /var/log/statsd
-    /opt/node/bin/forever start -a -o '/var/log/statsd/out.log' -e '/var/log/statsd/error.log' '/opt/statsd/stats.js' '/opt/statsd/config.js'
+    "${appPath}/bin/start"
 }
 
 function main
 {
+    appPath="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
     installDependencies
     installNode
     installNodeApps
