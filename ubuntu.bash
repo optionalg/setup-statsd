@@ -1,3 +1,5 @@
+#!/bin/bash
+
 function escapeSearchPattern
 {
     echo "$(echo "${1}" | sed "s@\[@\\\\[@g")"

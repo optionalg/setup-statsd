@@ -1,0 +1,3 @@
+#!/bin/bash
+
+/opt/node/bin/forever start -a -o '/var/log/statsd/out.log' -e '/var/log/statsd/error.log' '/opt/statsd/stats.js' '/opt/statsd/config.js'

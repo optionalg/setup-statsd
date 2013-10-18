@@ -1,0 +1,3 @@
+#!/bin/bash
+
+/opt/node/bin/forever stop '/opt/statsd/stats.js'
