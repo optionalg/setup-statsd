@@ -30,10 +30,7 @@ function installStatSD
     cd '/opt'
     git clone 'https://github.com/etsy/statsd.git'
 
-    local oldGraphiteHost="$(escapeSearchPattern 'graphite.example.com')"
-    local newGraphiteHost="$(escapeSearchPattern '127.0.0.1')"
-
-    sed "s@${oldGraphiteHost}@${newGraphiteHost}@g" '/opt/statsd/exampleConfig.js' > '/opt/statsd/config.js'
+    cp "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/config/config.js" '/opt/statsd/config.js'
 
     cd '/opt/statsd'
     /opt/node/bin/npm install
