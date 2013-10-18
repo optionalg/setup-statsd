@@ -6,7 +6,7 @@ function escapeSearchPattern
 function installDependencies
 {
     apt-get update
-    apt-get -y install make
+    apt-get -y install build-essential
 }
 
 function installNode
