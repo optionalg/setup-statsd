@@ -1,10 +1,5 @@
 #!/bin/bash
 
-function escapeSearchPattern
-{
-    echo "$(echo "${1}" | sed "s@\[@\\\\[@g")"
-}
-
 function installDependencies
 {
     apt-get update
