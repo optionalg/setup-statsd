@@ -11,7 +11,7 @@ function installDependencies
 function installNode
 {
     mkdir -p '/opt/node'
-    curl -L 'http://nodejs.org/dist/v0.10.21/node-v0.10.21-linux-x64.tar.gz' | tar xz --strip 1 -C '/opt/node'
+    curl -L 'http://nodejs.org/dist/v0.10.22/node-v0.10.22-linux-x64.tar.gz' | tar xz --strip 1 -C '/opt/node'
 
     echo 'export PATH="/opt/node/bin:$PATH"' > '/etc/profile.d/node.sh'
     source '/etc/profile.d/node.sh'
