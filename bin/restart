@@ -1,6 +1,0 @@
-#!/bin/bash
-
-binFolderPath="$(cd "$(dirname "${0}")" && pwd)"
-
-"${binFolderPath}/stop"
-"${binFolderPath}/start"
