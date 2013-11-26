@@ -25,8 +25,10 @@ function installStatSD
 
     cd '/usr/share'
     git clone 'https://github.com/mapbox/pong.git'
+    git clone 'https://github.com/bluesmoon/node-geoip.git'
     cd '/usr/share/pong'
     npm install
+    cp /usr/share/node-geoip/data/*.dat /usr/share/pong/node_modules/geoip-lite/data/
 }
 
 function startServers
